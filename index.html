@@ -152,7 +152,7 @@
                 <tr>
                     <td class="task">
                         <span style="font-family: 宋体; font-size: 20px;"><b>四人赛</b></span>
-                        <span style="margin-top: 5px; color: rgba(143,143,143); font-size: 14px;">首局第一名积3分，第二、三名积2分，第四名积1分；第二局第一名积2分，其余名次积1分；每日仅前两局得分<br>每日上限5分</span>
+                        <span style="margin-top: 5px; color: rgba(143,143,143); font-size: 14px;">首局第一名积3分，第二、三名积2分，第四名积1分；<br>每日上限5分</span>
                         <input type="range" class="slider" min="0" max="5" step="1" value="0">
                     </td>
                     <td class="op">
@@ -239,8 +239,12 @@
                       slider.addEventListener('input', function() {
                         const value = slider.value;
                         values[index].textContent = parseInt(value);
-                        if (parseInt(value) == 0)
-                            buttons[index].innerHTML = "去看看"
+                        var prop = sliders[index].max
+                        if (value === prop) {
+                            buttons[index - 2].innerHTML = "<b>已完成</b>"
+                        } else {
+                            buttons[index - 2].innerHTML = "<b>去看看</b>"
+                        }
                         calculateSum();
                       });
                     });
