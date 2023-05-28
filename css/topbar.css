@@ -1,0 +1,44 @@
+.topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.ret {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 100%;
+    width: 33%;
+}
+
+.ret > span {
+    font-size: 20px;
+}
+
+.study {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 33%;
+    font-size: 20px;
+    font-family: 黑体;
+}
+
+.more {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    height: 100%;
+    width: 33%;
+    font-size: 20px;
+}

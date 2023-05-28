@@ -1,0 +1,231 @@
+html ,body {
+    margin: 0%;
+    padding: 0%;
+    background: rgba(255,255,255);
+}
+
+.fuckbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    /* height: 20%; */
+    height: max-content;
+    background: linear-gradient(rgb(251,84,48), rgb(249,109,48));
+    overflow: hidden;
+    color: rgba(255,255,255);
+}
+
+.fuckbox > span {
+    font-family: 黑体;
+    /* color: rgba(255,255,255); */
+}
+
+#addstar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    background: rgba(255,161,133);
+    /* background: linear-gradient(to right, rgba(255,196,117), rgba(255,177,50)); */
+    clip-path: polygon(50% 0%, 62% 28%, 98% 35%, 74% 58%, 79% 91%, 51% 74%, 21% 91%, 27% 58%, 2% 35%, 36% 29%);
+}
+
+.starlight {
+    width: 20px;
+    height: 20px;
+    /* background: rgba(255,161,133); */
+    background: linear-gradient(to right, rgba(255,196,117), rgba(255,177,50));
+    clip-path: polygon(50% 0%, 62% 28%, 98% 35%, 74% 58%, 79% 91%, 51% 74%, 21% 91%, 27% 58%, 2% 35%, 36% 29%);
+}
+
+.cert {
+    width: max-content;
+    height: max-content;
+    box-sizing: border-box;
+    padding: 2px 4px 2px 4px;
+    /* line-height: 125%; */
+    background: rgba(255,255,255);
+    border-radius: 20px;
+    color: rgba(249,98,53);
+    font-size: 10px;
+}
+
+.fuckscores {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    width: max-content;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 150%;
+    background: rgba(250,133,54, 0.9);
+    color: rgba(255,199,153);
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.gift {
+    display: flex;
+    flex-direction: row;
+    margin-top: -30px;
+    margin-left: 10%;
+    box-shadow: 0 1px 1px rgb(208, 208, 208, 0.4);
+    width: 80%;
+    box-sizing: border-box;
+    padding: 15px 25px 15px 25px;
+    min-height: 75px;
+    height: max-content;
+    background: rgba(255,255,255);
+    border-radius: 5px;
+}
+
+.gift > img {
+    min-width: 45px;
+    max-height: 45px;
+    border: 1px solid red;
+}
+
+.scorebox {
+    width: 90%;
+    height: fit-content;
+    margin-left: 5%;
+}
+
+/*积分盒子*/
+
+.title {
+    position: relative;
+    margin-top: 25px;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: start; */
+    width: 100%;
+    height: min-content;
+    border-bottom: 1px solid rgba(244,244,244);
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 160px;
+    /* border: 1px solid red; */
+    border-bottom: 1px solid rgba(244,244,244);
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    line-height: 120%;
+    width: 75%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.op {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    line-height: 120%;
+    width: 25%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.op > button {
+    border: none;
+    margin-top: 30px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 5px 5px 5px 5px;
+    width: max-content;
+    height: max-content;
+    font-size: 15px;
+    font-family: 黑体;
+}
+
+.sc {
+    margin-top: 20px;
+    position: relative;
+    bottom: 0px;
+}
+
+/* 输入条 */
+
+.f {
+    font-weight: bold;
+    color: rgba(149,149,149);
+}
+
+.redfont {
+    color: rgba(212,47,28);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+        overflow: hidden;
+        width: 80%;
+        height: 16px;
+        border-radius: 10px;
+        appearance: none;
+        -webkit-appearance: none;
+        /* background-color: rgba(236,237,239); */
+        background: linear-gradient(to right, rgba(224,89,70), rgba(255,142,38));
+    }
+
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 16px;
+      -webkit-appearance: none;
+      color: #13bba4;
+      margin-top: -1px;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      width: 0;
+      -webkit-appearance: none;
+      height: 16px;
+      cursor: ew-resize;
+      background: #434343;
+      box-shadow: 8000px 0 0 8000px rgba(235,235,235);
+    }
+
+}
+
+/* 其他浏览器支持 */
+/** FF*/
+/* input[type="range"]::-moz-range-progress {
+    background-color: #43e5f7;
+}
+input[type="range"]::-moz-range-track {
+    background-color: #9a905d;
+} */
+/* IE*/
+/* input[type="range"]::-ms-fill-lower {
+    background-color: #43e5f7;
+}
+input[type="range"]::-ms-fill-upper {
+    background-color: #9a905d;
+} */
+/* Safari != Chrome （尖叫 */
