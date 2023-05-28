@@ -65,7 +65,7 @@
                         <input type="range" class="slider" min="0" max="1" step="1" value="1">
                     </td>
                     <td class="op">
-                        <button id="fistatus"><b>不知道</b></button>
+                        <button id="fistatus"><b>已完成</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/1分</span>
                         </div>
@@ -78,7 +78,7 @@
                         <input type="range" class="slider" min="0" max="12" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button id="fistatus"><b>不知道</b></button>
+                        <button id="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/12分</span>
                         </div>
@@ -91,7 +91,7 @@
                         <input type="range" class="slider" min="0" max="6" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/6分</span>
                         </div>
@@ -104,7 +104,7 @@
                         <input type="range" class="slider" min="0" max="6" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/6分</span>
                         </div>
@@ -117,7 +117,7 @@
                         <input type="range" class="slider" min="0" max="5" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/5分</span>
                         </div>
@@ -130,7 +130,7 @@
                         <input type="range" class="slider" min="0" max="5" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/5分</span>
                         </div>
@@ -143,7 +143,7 @@
                         <input type="range" class="slider" min="0" max="5" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/5分</span>
                         </div>
@@ -156,7 +156,7 @@
                         <input type="range" class="slider" min="0" max="5" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/5分</span>
                         </div>
@@ -169,7 +169,7 @@
                         <input type="range" class="slider" min="0" max="2" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/2分</span>
                         </div>
@@ -182,7 +182,7 @@
                         <input type="range" class="slider" min="0" max="2" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/2分</span>
                         </div>
@@ -195,7 +195,7 @@
                         <input type="range" class="slider" min="0" max="1" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/1分</span>
                         </div>
@@ -208,7 +208,7 @@
                         <input type="range" class="slider" min="0" max="1" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/1分</span>
                         </div>
@@ -221,7 +221,7 @@
                         <input type="range" class="slider" min="0" max="2" step="1" value="0">
                     </td>
                     <td class="op">
-                        <button class="fistatus"><b>不知道</b></button>
+                        <button class="fistatus"><b>去看看</b></button>
                         <div class="sc">
                             <span class="f"><span class="redfont"><span class="value">0</span>分</span>/2分</span>
                         </div>
@@ -240,10 +240,13 @@
                         const value = slider.value;
                         values[index].textContent = parseInt(value);
                         var prop = sliders[index].max
+                        console.log(index)
                         if (value === prop) {
                             buttons[index - 2].innerHTML = "<b>已完成</b>"
+                            buttons[index - 2].style.backgroundColor = "rgba(243,244,246)"
                         } else {
                             buttons[index - 2].innerHTML = "<b>去看看</b>"
+                            buttons[index - 2].style.backgroundColor = "rgba(254,247,237)"
                         }
                         calculateSum();
                       });
