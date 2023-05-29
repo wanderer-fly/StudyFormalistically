@@ -10,11 +10,11 @@
         <div class="topbar">
             <div class="ret"><span>〈</span></div>
             <div class="study"><span>学习积分</span></div>
-            <div class="more"><span><b>⋯</b></span></div>
+            <div class="more" id="morebut"><span><b>⋯</b></span></div>
         </div>
         <div class="fuckbox">
             <span style="font-size: 21px; margin-top: 15px;">成长总积分</span>
-            <h1 id="scores">114514</h1>
+            <h1 id="scores">4367</h1>
             <span style="display: flex; flex-direction: row; justify-content: center; align-items: center; height: 20px">
                 <p id="text"></p>&nbsp;
                 <div id="addstar"></div>
@@ -23,20 +23,35 @@
             </span>
             <div class="fuckscores">⚠对违规获取积分的行为处罚说明</div>
             <script>
-                document.getElementById("text").innerHTML = "趨之若鶩"
+                document.getElementById("text").innerHTML = "才高八斗"
                 var scores = document.getElementById("scores")
-                console.log(scores.textContent)
-                var stars = 0
-                for (var i = 1; i < scores.textContent; i *= 10) {
-                    stars++
-                    document.getElementById("addstar").innerHTML += "<div class=\"starlight\"></div>"
-                }
-                for (var i = stars; i < 10; i++) {
-                    document.getElementById("addstar").innerHTML += "<div class=\"star\"></div>"
+                var names = ["一心一意",
+                 "再接再厉",
+                 "三省吾身",
+                 "名扬四海",
+                 "学富五车",
+                 "六韬三略",
+                 "七步才华",
+                 "才高八斗",
+                 "九天揽月",
+                 "深海捉鳖"]
+                 setStar()
+                function setStar() {
+                    document.getElementById("addstar").innerHTML = ""
+                    var pos = names.indexOf(document.getElementById('text').textContent)
+                    console.log(pos)
+                    var stars = 0
+                    for (var i = 1; i <= pos + 1; i++) {
+                        stars++
+                        document.getElementById("addstar").innerHTML += "<div class=\"starlight\"></div>"
+                    }
+                    for (var i = stars; i < 10; i++) {
+                        document.getElementById("addstar").innerHTML += "<div class=\"star\"></div>"
+                    }
                 }
             </script>
         </div>
-        <div class="gift">
+        <div class="gift" id="sbgift">
             <img src="">
             <div style="display: flex; flex-direction: column; line-height: 80%; box-sizing: border-box; padding-top: 5px; min-width: max-content;">
                 <span style="margin-left: 15px; font-size: 20px; font-family: 宋体;"><b>强国城兑福利</b></span><br>
@@ -44,6 +59,41 @@
             </div>
             <div style="display: flex; flex-direction: row; justify-content: end; align-items: center; width: 100%;"><b>〉</b></div>
         </div>
+        <div class="settingbox" id="setting">
+            <h1>形式主义强国~</h1>
+            <input type="text" placeholder="成长总积分" id="total" value="4367">
+            <select name="sname" id="sname">
+                <option value="default"></option>
+                <option value="o0" id="o0">一心一意</option>
+                <option value="o1" id="o1">再接再厉</option>
+                <option value="o2" id="o2">三省吾身</option>
+                <option value="o3" id="o3">名扬四海</option>
+                <option value="o4" id="o4">学富五车</option>
+                <option value="o5" id="o5">六韬三略</option>
+                <option value="o6" id="o6">七步才华</option>
+                <option value="o7" id="o7">才高八斗</option>
+                <option value="o8" id="o8">九天揽月</option>
+                <option value="o9" id="o9">深海捉鳖</option>
+            </select>
+            <button id="setup">设定</button>
+            <script>
+                document.getElementById('setup').addEventListener('click', function() {
+                    document.getElementById('scores').innerText = document.getElementById('total').value
+                    if (document.getElementById('sname').value != 'default') {
+                        document.getElementById('text').innerHTML = 
+                        document.getElementById(document.getElementById('sname').value).textContent
+                        setStar()
+                    }
+                    document.getElementById('setting').style.display = 'none'
+                })
+            </script>
+        </div>
+        <script>
+            document.getElementById("morebut").addEventListener('click', function() {
+                document.getElementById("setting").style.display = 
+                    document.getElementById("setting").style.display === "block" ? "none" : "block"
+            })
+        </script>
         <div class="scorebox">
             <div class="title">
                 <span style="font-family: 宋体; font-size: 22px; justify-self: flex-start; align-items: center;">
@@ -67,7 +117,7 @@
                     <td class="op">
                         <button class="fistatus" style="background: rgba(243,244,246);"><b>已完成</b></button>
                         <div class="sc">
-                            <span class="f"><span class="redfont"><span class="value">0</span>分</span>/1分</span>
+                            <span class="f"><span class="redfont"><span class="value">1</span>分</span>/1分</span>
                         </div>
                     </td>
                 </tr>
@@ -228,36 +278,57 @@
                     </td>
                 </tr>
                 <script>
-                    console.log("Hi")
                     const sliders = document.querySelectorAll('.slider');
                     const values = document.querySelectorAll('.value');
                     const buttons = document.querySelectorAll('.fistatus')
                     const sumElement = document.getElementById('sum');
+                    //按钮
+                    buttons.forEach((button, index) => {
+                        button.addEventListener('click', function() {
+                            console.log(button.textContent)
+                            if (button.textContent === "已完成") {
+                                sliders[index].value = 0
+                                // values[index].textContent = parseInt(sliders[index].value);
+                                button.innerHTML = "<b>去看看</b>"
+                                buttons[index].style.backgroundColor = "rgba(254,247,237)"
+                            } else if (button.textContent === "去看看") {
+                                sliders[index].value = sliders[index].max
+                                // values[index].textContent = parseInt(sliders[index].value);
+                                buttons[index].innerHTML = "<b>已完成</b>"
+                                buttons[index].style.backgroundColor = "rgba(243,244,246)"
+                            }
+                            values[index].textContent = parseInt(sliders[index].value);
+                            calculateSum();
+                        })
+                    })
  
                     // 滑动条
                     sliders.forEach((slider, index) => {
-                      slider.addEventListener('input', function() {
-                        const value = slider.value;
-                        values[index].textContent = parseInt(value);
-                        var prop = sliders[index].max
-                        console.log(index)
-                        if (value === prop) {
-                            buttons[index].innerHTML = "<b>已完成</b>"
-                            buttons[index].style.backgroundColor = "rgba(243,244,246)"
-                        } else {
-                            buttons[index].innerHTML = "<b>去看看</b>"
-                            buttons[index].style.backgroundColor = "rgba(254,247,237)"
-                        }
-                        calculateSum();
-                      });
+                        slider.addEventListener('input', function() {
+                            const value = slider.value;
+                            values[index].textContent = parseInt(value);
+                            var prop = sliders[index].max
+                            console.log(index)
+                            if (value === prop) {
+                                buttons[index].innerHTML = "<b>已完成</b>"
+                                buttons[index].style.backgroundColor = "rgba(243,244,246)"
+                            } else {
+                                buttons[index].innerHTML = "<b>去看看</b>"
+                                buttons[index].style.backgroundColor = "rgba(254,247,237)"
+                            }
+                            calculateSum();
+                        });
                     });
     
                     function calculateSum() {
-                      let sum = 0;
-                      values.forEach(value => {
-                        sum += parseInt(value.textContent);
-                      });
-                      sumElement.textContent = sum;
+                        let sum = 0;
+                        values.forEach(value => {
+                          sum += parseInt(value.textContent);
+                        });
+                        sumElement.textContent = sum;
+                        var sc = parseInt(document.getElementById('scores').textContent)
+                        sc = parseInt(document.getElementById('total').value) + sum
+                        document.getElementById('scores').textContent = sc
                     }
                 </script>
             </table>
