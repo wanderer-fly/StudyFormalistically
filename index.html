@@ -330,6 +330,27 @@
                         sc = parseInt(document.getElementById('total').value) + sum
                         document.getElementById('scores').textContent = sc
                     }
+
+                    document.getElementById('sbgift').addEventListener('click', function() {
+                        sliders.forEach((slider, index) => {
+                            if (index <= 7) {
+                                slider.value = slider.max
+                                const value = slider.value;
+                                values[index].textContent = parseInt(value);
+                                var prop = sliders[index].max
+                                console.log(index)
+                                if (value === prop) {
+                                    buttons[index].innerHTML = "<b>已完成</b>"
+                                    buttons[index].style.backgroundColor = "rgba(243,244,246)"
+                                } else {
+                                    buttons[index].innerHTML = "<b>去看看</b>"
+                                    buttons[index].style.backgroundColor = "rgba(254,247,237)"
+                                }
+                                calculateSum()
+                            }
+                            
+                        })
+                    })
                 </script>
             </table>
         </div>
