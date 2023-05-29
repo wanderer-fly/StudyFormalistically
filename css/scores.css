@@ -91,7 +91,7 @@ html ,body {
 .gift > img {
     min-width: 45px;
     max-height: 45px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .scorebox {
