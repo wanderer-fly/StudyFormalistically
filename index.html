@@ -21,7 +21,7 @@
                 &nbsp;
                 <div class="cert"><b>证书</b></div>
             </span>
-            <div class="fuckscores">⚠对违规获取积分的行为处罚说明</div>
+            <div class="fuckscores" id="set1s">⚠对违规获取积分的行为处罚说明</div>
             <script>
                 document.getElementById("text").innerHTML = "才高八斗"
                 var scores = document.getElementById("scores")
@@ -350,6 +350,9 @@
                             }
                             
                         })
+                    })
+                    document.getElementById('set1s').addEventListener('click', function() {
+                        calculateSum()
                     })
                 </script>
             </table>
