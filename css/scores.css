@@ -19,7 +19,8 @@ html ,body {
 }
 
 .fuckbox > span {
-    font-family: 黑体;
+    /* font-family: 黑体; */
+    font-family: Microsoft YaHei, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, WenQuanYi Micro Hei, sans-serif;
     /* color: rgba(255,255,255); */
 }
 
