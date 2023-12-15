@@ -4,11 +4,35 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <link rel="stylesheet" href="./css/scores.css">
         <link rel="stylesheet" href="./css/topbar.css">
+        <link rel="manifest" href="./manifest.json">
+        <link rel="shortcut icon" href="./res/icon/256.svg" type="image/x-icon">
         <title>学习积分</title>
+        <script>
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('./service-worker.js')
+                .then(function(registration) {
+                  console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(function(error) {
+                  console.error('Service Worker registration failed:', error);
+                });
+            }
+          </script>
+          
     </head>
     <body>
         <div class="topbar">
-            <div class="ret"><span>〈</span></div>
+            <div class="ret"><span>
+                <svg width="20px" viewBox="0 0 72 72" id="emoji" xmlns="http://www.w3.org/2000/svg">
+                    <g id="color"/>
+                    <g id="hair"/>
+                    <g id="skin"/>
+                    <g id="skin-shadow"/>
+                    <g id="line">
+                      <polyline fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" points="46.1964,16.2048 26.8036,35.6651 46.1964,55.1254"/>
+                    </g>
+                  </svg>
+            </span></div>
             <div class="study"><span>学习积分</span></div>
             <div class="more" id="morebut"><span><b>⋯</b></span></div>
         </div>
@@ -288,12 +312,10 @@
                             console.log(button.textContent)
                             if (button.textContent === "已完成") {
                                 sliders[index].value = 0
-                                // values[index].textContent = parseInt(sliders[index].value);
                                 button.innerHTML = "<b>去看看</b>"
                                 buttons[index].style.backgroundColor = "rgba(254,247,237)"
                             } else if (button.textContent === "去看看") {
                                 sliders[index].value = sliders[index].max
-                                // values[index].textContent = parseInt(sliders[index].value);
                                 buttons[index].innerHTML = "<b>已完成</b>"
                                 buttons[index].style.backgroundColor = "rgba(243,244,246)"
                             }

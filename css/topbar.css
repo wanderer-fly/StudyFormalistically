@@ -16,6 +16,7 @@
     justify-content: center;
     height: 100%;
     width: 33%;
+    margin-left: 10px;
 }
 
 .ret > span {
@@ -42,4 +43,5 @@
     height: 100%;
     width: 33%;
     font-size: 20px;
+    margin-right: 10px;
 }

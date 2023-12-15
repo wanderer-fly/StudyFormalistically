@@ -1,0 +1,16 @@
+{
+    "name": "学习墙国",
+    "short_name": "学习墙国",
+    "description": "学习墙国",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+      {
+        "src": "./res/icon/256.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
